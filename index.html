@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mavel Creative – Official Price List</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0F;
+    --surface: #111118;
+    --surface2: #18181f;
+    --accent: #C8FF00;
+    --accent2: #7C3AFF;
+    --text: #F0F0F8;
+    --muted: #6B6B80;
+    --border: rgba(255,255,255,0.07);
+    --card-bg: #13131a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0; opacity: 0.4;
+  }
+
+  /* ── GLOW BLOBS ── */
+  .glow-1, .glow-2, .glow-3 {
+    position: fixed; border-radius: 50%;
+    pointer-events: none; z-index: 0;
+    filter: blur(120px); opacity: 0.18;
+  }
+  .glow-1 { width: 600px; height: 600px; background: var(--accent2); top: -200px; left: -100px; }
+  .glow-2 { width: 500px; height: 500px; background: var(--accent); top: 40%; right: -150px; opacity: 0.08; }
+  .glow-3 { width: 400px; height: 400px; background: var(--accent2); bottom: 0; left: 30%; opacity: 0.12; }
+
+  /* ── WRAPPER ── */
+  .wrapper {
+    position: relative; z-index: 1;
+    max-width: 1080px; margin: 0 auto;
+    padding: 80px 28px 100px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    margin-bottom: 72px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 32px;
+  }
+  .header-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,255,0,0.08);
+    border: 1px solid rgba(200,255,0,0.25);
+    color: var(--accent);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+    padding: 8px 18px; border-radius: 100px; margin-bottom: 28px;
+    width: fit-content;
+  }
+  .header-tag span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: block; animation: blink 2s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+
+  .header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(52px, 9vw, 100px);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -3px;
+    color: var(--text);
+  }
+  .header h1 em {
+    font-style: normal;
+    -webkit-text-stroke: 1.5px var(--text);
+    color: transparent;
+  }
+  .header h1 .accent-word { color: var(--accent); -webkit-text-stroke: 0; }
+
+  .header-right {
+    text-align: right;
+    padding-bottom: 8px;
+  }
+  .header-right p {
+    font-size: 13px; font-weight: 400; color: var(--muted);
+    line-height: 1.7; letter-spacing: 0.3px;
+    max-width: 220px; margin-left: auto;
+  }
+
+  .divider-line {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), rgba(200,255,0,0.3), var(--border), transparent);
+    margin-bottom: 64px;
+  }
+
+  /* ── PORTFOLIO BOX ── */
+  .portfolio-box {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    background: var(--card-bg);
+    border: 1px solid rgba(200,255,0,0.2);
+    border-radius: 20px; padding: 24px 32px;
+    margin-bottom: 72px;
+    position: relative; overflow: hidden;
+  }
+  .portfolio-box::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .portfolio-box-left { display: flex; align-items: center; gap: 20px; }
+  .portfolio-icon-wrap {
+    width: 48px; height: 48px; border-radius: 14px;
+    background: rgba(200,255,0,0.1); border: 1px solid rgba(200,255,0,0.2);
+    display: grid; place-items: center; flex-shrink: 0;
+  }
+  .portfolio-icon-wrap svg { color: var(--accent); }
+  .portfolio-box h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 3px; }
+  .portfolio-box p { font-size: 13px; color: var(--muted); font-weight: 400; }
+  .portfolio-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #0A0A0F;
+    font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
+    padding: 12px 24px; border-radius: 100px; text-decoration: none;
+    white-space: nowrap; flex-shrink: 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .portfolio-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,255,0,0.3); }
+  @media(max-width:560px) {
+    .portfolio-box { flex-direction: column; align-items: flex-start; }
+    .portfolio-btn { width: 100%; justify-content: center; }
+    .header { grid-template-columns: 1fr; }
+    .header-right { text-align: left; }
+    .header-right p { margin-left: 0; max-width: 100%; }
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 28px;
+  }
+  .section-label h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  /* ── CATEGORY BLOCK ── */
+  .category-block {
+    margin-bottom: 64px;
+  }
+
+  .category-header {
+    display: flex; align-items: center; gap: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .cat-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: grid; place-items: center; flex-shrink: 0;
+    color: var(--accent);
+  }
+  .cat-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; }
+  .cat-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* ── PRICE TABLE ── */
+  .price-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2px;
+  }
+  .price-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 16px 20px;
+    background: var(--card-bg);
+    border-radius: 0;
+    transition: background 0.2s;
+    cursor: default;
+  }
+  .price-row:first-child { border-radius: 14px 14px 0 0; }
+  .price-list:not(.single-col) .price-row:nth-child(odd):last-child { border-radius: 0 0 14px 14px; }
+  .price-list.two-col .price-row { border-radius: 0; }
+
+  .price-row:hover { background: var(--surface2); }
+  .price-row-left { display: flex; align-items: center; gap: 12px; }
+  .row-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    display: grid; place-items: center; flex-shrink: 0;
+    color: rgba(240,240,248,0.5);
+  }
+  .row-icon svg { width: 16px; height: 16px; }
+  .row-name { font-size: 14px; font-weight: 500; color: var(--text); }
+  .row-price {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px; font-weight: 700;
+    color: var(--accent); white-space: nowrap;
+  }
+
+  /* Rounded corners per grid cell group */
+  .price-list { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
+  .price-row { border-bottom: 1px solid var(--border); }
+  .price-row:last-child { border-bottom: none; }
+
+  /* ── ADD ONS ── */
+  .addons-section { margin-bottom: 72px; }
+  .addons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media(max-width: 640px) { .addons-grid { grid-template-columns: 1fr; } }
+  .addon-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px; padding: 24px 22px;
+    display: flex; flex-direction: column; gap: 10px;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .addon-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--accent); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .addon-card:hover { border-color: rgba(200,255,0,0.25); transform: translateY(-3px); }
+  .addon-card:hover::after { transform: scaleX(1); }
+  .addon-icon { color: var(--accent); width: 28px; height: 28px; }
+  .addon-name { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; }
+  .addon-price { font-size: 20px; font-weight: 700; font-family: 'Syne', sans-serif; color: var(--accent); }
+  .addon-desc { font-size: 12px; color: var(--muted); }
+
+  /* ── WHY SECTION ── */
+  .why-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 28px; padding: 48px 44px;
+    position: relative; overflow: hidden;
+    margin-bottom: 64px;
+  }
+  .why-section::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,255,0,0.5), transparent);
+  }
+  .why-section::after {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(124,58,255,0.15), transparent 70%);
+    pointer-events: none;
+  }
+  .why-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px; font-weight: 800; margin-bottom: 8px;
+  }
+  .why-title span { color: var(--accent); }
+  .why-sub { font-size: 14px; color: var(--muted); margin-bottom: 36px; }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; position: relative; z-index: 1; }
+  .why-item { }
+  .why-num {
+    font-family: 'Syne', sans-serif; font-size: 44px; font-weight: 800;
+    color: var(--accent); line-height: 1; margin-bottom: 8px; opacity: 0.9;
+  }
+  .why-item h4 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+  .why-item p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center; padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .footer-brand {
+    font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800;
+    letter-spacing: 4px; color: var(--text); margin-bottom: 8px;
+  }
+  .footer-brand span { color: var(--accent); }
+  .footer-note { font-size: 12px; color: var(--muted); }
+
+  /* ── ANIMATE ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .header        { animation: fadeUp 0.6s ease both; }
+  .portfolio-box { animation: fadeUp 0.6s ease 0.15s both; }
+  .category-block { animation: fadeUp 0.5s ease both; }
+  .category-block:nth-child(2) { animation-delay: 0.05s; }
+  .category-block:nth-child(3) { animation-delay: 0.10s; }
+  .category-block:nth-child(4) { animation-delay: 0.15s; }
+  .category-block:nth-child(5) { animation-delay: 0.20s; }
+  .category-block:nth-child(6) { animation-delay: 0.25s; }
+
+  /* responsive */
+  @media(max-width: 768px) {
+    .why-section { padding: 32px 24px; }
+    .price-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow-1"></div>
+<div class="glow-2"></div>
+<div class="glow-3"></div>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <div class="header-tag"><span></span> Official Price List 2025</div>
+      <h1>MAVEL<br><em>CREA</em><span class="accent-word">TIVE</span></h1>
+    </div>
+    <div class="header-right">
+      <p>Graphic Design Service<br>Elevating your brand with<br>creative visuals.</p>
+    </div>
+  </header>
+
+  <div class="divider-line"></div>
+
+  <!-- PORTFOLIO BOX -->
+  <div class="portfolio-box">
+    <div class="portfolio-box-left">
+      <div class="portfolio-icon-wrap">
+        <!-- Flat folder/gallery icon -->
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="5" width="20" height="14" rx="2" fill="currentColor" opacity="0.15"/>
+          <rect x="1" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M1 9h20" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 2h5l2 3H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Contoh Desain &amp; Portofolio Lengkap</h3>
+        <p>Lihat semua karya desain Mavel Creative di sini</p>
+      </div>
+    </div>
+    <a class="portfolio-btn" href="https://drive.google.com/drive/u/0/folders/1ezH9yU0U8mavcGPcqvEkulXYOheopks_" target="_blank" rel="noopener">
+      Buka Portofolio
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <!-- ═══════════ CATEGORIES ═══════════ -->
+
+  <!-- 1. SOCIAL MEDIA -->
+  <div class="category-block">
+    <div class="section-label"><h2>01</h2></div>
+    <div class="category-header">
+      <div class="cat-icon">
+        <!-- Flat social/phone icon -->
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="1" width="14" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="11" cy="17" r="1" fill="currentColor"/>
+          <rect x="7" y="5" width="8" height="7" rx="1.5" fill="currentColor" opacity="0.2"/>
+          <rect x="7" y="5" width="8" height="7" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div>
+        <div class="cat-title">Social Media Design</div>
+        <div class="cat-sub">Konten visual eye-catching untuk semua platform</div>
+      </div>
+    </div>
+    <div class="price-list">
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.3"/><rect x="4" y="4" width="8" height="8" rx="1" fill="currentColor" opacity="0.4"/></svg>
+          </div>
+          <span class="row-name">Feed Instagram simple</span>
+        </div>
+        <span class="row-price">Rp40.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="6" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="3" width="6" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M7 8h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <span class="row-name">Feed carousel (2–5 slide)</span>
+        </div>
+        <span class="row-price">Rp60.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="4" y="1" width="8" height="14" rx="2" stroke="currentColor" stroke-width="1.3"/><rect x="6" y="4" width="4" height="5" rx="0.8" fill="currentColor" opacity="0.4"/></svg>
+          </div>
+          <span class="row-name">Story Instagram</span>
+        </div>
+        <span class="row-price">Rp25.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M6.5 6l4 2-4 2V6z" fill="currentColor" opacity="0.6"/></svg>
+          </div>
+          <span class="row-name">Thumbnail YouTube</span>
+        </div>
+        <span class="row-price">Rp50.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M3 7h4M3 9h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/></svg>
+          </div>
+          <span class="row-name">Banner social media</span>
+        </div>
+        <span class="row-price">Rp75.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="8" r="2.5" fill="currentColor" opacity="0.4"/></svg>
+          </div>
+          <span class="row-name">Highlight cover IG</span>
+        </div>
+        <span class="row-price">Rp15.000<span style="font-size:11px;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:400">/icon</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. POSTER & PROMOTION -->
+  <div class="category-block">
+    <div class="section-label"><h2>02</h2></div>
+    <div class="category-header">
+      <div class="cat-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="1" width="16" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M7 7h8M7 10.5h8M7 14h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/>
+          <rect x="3" y="1" width="16" height="5" rx="2" fill="currentColor" opacity="0.15"/>
+        </svg>
+      </div>
+      <div>
+        <div class="cat-title">Poster &amp; Promotion</div>
+        <div class="cat-sub">Desain promosi yang menarik perhatian dan mengkonversi</div>
+      </div>
+    </div>
+    <div class="price-list">
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 5h6M5 8h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/><rect x="2" y="1" width="12" height="3" rx="2" fill="currentColor" opacity="0.3"/></svg>
+          </div>
+          <span class="row-name">Poster event / promosi</span>
+        </div>
+        <span class="row-price">Rp60.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M4 6h5M4 9h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Flyer A5 / A4</span>
+        </div>
+        <span class="row-price">Rp75.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M2 2h12v12H2z" stroke="currentColor" stroke-width="1.3" rx="1"/><path d="M6 2v12" stroke="currentColor" stroke-width="1.3" opacity="0.5"/><path d="M10 2v12" stroke="currentColor" stroke-width="1.3" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Brosur lipat</span>
+        </div>
+        <span class="row-price">Rp120.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="2" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M1 6h14" stroke="currentColor" stroke-width="1.2" opacity="0.4"/><circle cx="4.5" cy="9.5" r="1.5" fill="currentColor" opacity="0.4"/><path d="M7 9h5M7 11h3" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Menu makanan / minuman</span>
+        </div>
+        <span class="row-price">Rp80.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="8" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 4V3M11 4V3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/><path d="M5 12v1M11 12v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/><path d="M5 8h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Voucher / promo card</span>
+        </div>
+        <span class="row-price">Rp50.000</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. BRANDING -->
+  <div class="category-block">
+    <div class="section-label"><h2>03</h2></div>
+    <div class="category-header">
+      <div class="cat-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 2L4 7v13h14V7L11 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M8 20v-7h6v7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity="0.6"/>
+          <path d="M11 2l7 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="cat-title">Branding</div>
+        <div class="cat-sub">Identitas visual profesional untuk bisnis kamu</div>
+      </div>
+    </div>
+    <div class="price-list">
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4L8 2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="row-name">Logo simple</span>
+        </div>
+        <span class="row-price">Rp150.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4L8 2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><rect x="2" y="11" width="5" height="4" rx="0.8" stroke="currentColor" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Logo + mockup</span>
+        </div>
+        <span class="row-price">Rp250.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M3 7h4M3 9.5h2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/><circle cx="12" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.1" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Business card</span>
+        </div>
+        <span class="row-price">Rp75.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="2" width="9" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><rect x="6" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M3 5h5M3 7.5h3" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Stationery kit</span>
+        </div>
+        <span class="row-price">Rp200.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 4h10v8a2 2 0 01-2 2H5a2 2 0 01-2-2V4z" stroke="currentColor" stroke-width="1.3"/><path d="M1 4h14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M6 4V2h4v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Packaging label</span>
+        </div>
+        <span class="row-price">Rp100.000</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. MOTION GRAPHIC -->
+  <div class="category-block">
+    <div class="section-label"><h2>04</h2></div>
+    <div class="category-header">
+      <div class="cat-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="4" width="20" height="14" rx="2.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9 8.5l5 2.5-5 2.5V8.5z" fill="currentColor" opacity="0.6"/>
+          <path d="M1 17h20" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        </svg>
+      </div>
+      <div>
+        <div class="cat-title">Motion Graphic &amp; Video</div>
+        <div class="cat-sub">Animasi dan video yang hidup dan berkesan</div>
+      </div>
+    </div>
+    <div class="price-list">
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M6.5 5.5L10 8l-3.5 2.5V5.5z" fill="currentColor" opacity="0.6"/></svg>
+          </div>
+          <span class="row-name">Motion graphic</span>
+        </div>
+        <span class="row-price">Rp80.000<span style="font-size:11px;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:400"> /15 dtk</span></span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="4" y="1" width="8" height="14" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M6 5l4 3-4 3V5z" fill="currentColor" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Animated story</span>
+        </div>
+        <span class="row-price">Rp80.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M3 7h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/><path d="M5 10h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/><path d="M6 13h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.15"/></svg>
+          </div>
+          <span class="row-name">Lyric / typography animation</span>
+        </div>
+        <span class="row-price">Rp100.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M1 8h2M13 8h2" stroke="currentColor" stroke-width="1.3" opacity="0.5"/><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+          </div>
+          <span class="row-name">Video editing short content</span>
+        </div>
+        <span class="row-price">Rp150k–300k</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M2 4h3l2 3H2V4z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" opacity="0.5"/><path d="M14 4h-3l-2 3h5V4z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" opacity="0.5"/><rect x="2" y="7" width="12" height="5" rx="1.5" stroke="currentColor" stroke-width="1.3"/></svg>
+          </div>
+          <span class="row-name">Intro / outro video</span>
+        </div>
+        <span class="row-price">Rp70.000</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. STREAM & GAMING -->
+  <div class="category-block">
+    <div class="section-label"><h2>05</h2></div>
+    <div class="category-header">
+      <div class="cat-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="4" width="20" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="7.5" cy="11" r="2" stroke="currentColor" stroke-width="1.3" opacity="0.7"/>
+          <path d="M13 9h4M13 11h4M13 13h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="cat-title">Stream &amp; Gaming</div>
+        <div class="cat-sub">Tampilan stream profesional yang bikin viewers betah</div>
+      </div>
+    </div>
+    <div class="price-list">
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="8" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M4 8h3M7 6v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Banner stream</span>
+        </div>
+        <span class="row-price">Rp80.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.3"/><rect x="3" y="3" width="4" height="4" rx="1" fill="currentColor" opacity="0.3"/><rect x="9" y="3" width="4" height="4" rx="1" fill="currentColor" opacity="0.3"/><rect x="3" y="9" width="4" height="4" rx="1" fill="currentColor" opacity="0.3"/><rect x="9" y="9" width="4" height="4" rx="1" fill="currentColor" opacity="0.3"/></svg>
+          </div>
+          <span class="row-name">Overlay stream</span>
+        </div>
+        <span class="row-price">Rp150.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3" opacity="0.6"/><path d="M4 8h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/><path d="M8 5.5v5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Panel Twitch / YouTube</span>
+        </div>
+        <span class="row-price">Rp20.000<span style="font-size:11px;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:400"> /panel</span></span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.8 4H14l-3.4 2.6 1.3 4L8 10.4 4.1 12.6l1.3-4L2 6h4.2L8 2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" fill="currentColor" opacity="0.2"/></svg>
+          </div>
+          <span class="row-name">Esport poster</span>
+        </div>
+        <span class="row-price">Rp70.000</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. PRINT & EVENT -->
+  <div class="category-block">
+    <div class="section-label"><h2>06</h2></div>
+    <div class="category-header">
+      <div class="cat-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="7" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M7 7V4h8v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+          <path d="M7 17v1h8v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+          <circle cx="16.5" cy="12" r="1" fill="currentColor" opacity="0.5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="cat-title">Print &amp; Event</div>
+        <div class="cat-sub">Material cetak dan event yang berkesan dan berkelas</div>
+      </div>
+    </div>
+    <div class="price-list">
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="5" y="1" width="6" height="12" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M3 13h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">X-banner</span>
+        </div>
+        <span class="row-price">Rp60.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M4 2h8M5 14h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Spanduk</span>
+        </div>
+        <span class="row-price">Rp70.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="2" width="14" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><rect x="3" y="4" width="4" height="3" rx="0.8" fill="currentColor" opacity="0.3"/><path d="M9 5h4M9 7.5h3M3 10h10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity="0.4"/></svg>
+          </div>
+          <span class="row-name">Backdrop event</span>
+        </div>
+        <span class="row-price">Rp150.000 <span style="font-size:10px;color:var(--muted);font-family:'DM Sans',sans-serif">+3D mockup</span></span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 7l2 2 4-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/></svg>
+          </div>
+          <span class="row-name">Sertifikat</span>
+        </div>
+        <span class="row-price">Rp35.000</span>
+      </div>
+      <div class="price-row">
+        <div class="price-row-left">
+          <div class="row-icon">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M2 3h12v9a2 2 0 01-2 2H4a2 2 0 01-2-2V3z" stroke="currentColor" stroke-width="1.3"/><path d="M2 3l6 5 6-5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/></svg>
+          </div>
+          <span class="row-name">Undangan digital</span>
+        </div>
+        <span class="row-price">Rp75.000</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD-ONS -->
+  <div class="addons-section">
+    <div class="section-label"><h2>Add-Ons</h2></div>
+    <div class="addons-grid">
+      <div class="addon-card">
+        <svg class="addon-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 4v8l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M9 22l2-3h6l2 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+        </svg>
+        <div class="addon-name">Fast Delivery</div>
+        <div class="addon-price">+20%</div>
+        <div class="addon-desc">Selesai dalam 1 hari</div>
+      </div>
+      <div class="addon-card">
+        <svg class="addon-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="4" width="22" height="17" rx="2.5" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M9 21v3M19 21v3M6 24h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+          <path d="M8 12h12M8 16h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+        <div class="addon-name">Source File</div>
+        <div class="addon-price">+Rp50.000</div>
+        <div class="addon-desc">File AI / PSD asli</div>
+      </div>
+      <div class="addon-card">
+        <svg class="addon-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="9" y="11" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M3 11h6M9 5v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+        <div class="addon-name">Resize Desain</div>
+        <div class="addon-price">Rp10.000<span style="font-size:13px;font-family:'DM Sans',sans-serif;color:var(--muted);font-weight:400"> /size</span></div>
+        <div class="addon-desc">Ubah ukuran desain yang sudah ada</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY US -->
+  <div class="why-section">
+    <div class="why-title">Kenapa Pilih <span>Mavel?</span></div>
+    <div class="why-sub">Kualitas bukan kebetulan — ini adalah standar kami</div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">10+</div>
+        <h4>Tahun Pengalaman</h4>
+        <p>Menjamin kualitas visual dan estetika pada setiap proyek desain</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">HD</div>
+        <h4>High Quality Output</h4>
+        <p>File dikirim dalam resolusi tinggi siap cetak maupun digital</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">✓</div>
+        <h4>Revisi Sampai Puas</h4>
+        <p>Komunikasi lancar dan pengerjaan tepat waktu tanpa drama</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">MAVEL <span>CREATIVE</span></div>
+    <div class="footer-note">© 2025 Mavel Creative · Graphic Design Service · All rights reserved</div>
+  </footer>
+
+</div>
+</body>
+</html>
