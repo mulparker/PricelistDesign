@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>The Wedding Of - Alin &amp; Aldi</title>
+  <meta name="description" content="Senin, 30 November 2026 - Jalan Pondok Merah Kuning Blok M No 22, Kaliabang tengah, Bekasi Utara" />
+  <meta name="theme-color" content="#6d493f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brown: #6d493f;
+      --brown-light: #9c6e60;
+      --cream: #f9f3ee;
+      --gold: #c9a96e;
+      --dark: #2c1a14;
+      --text: #4a3228;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── COVER ── */
+    #cover {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #3b1f17 0%, #6d493f 50%, #9c6e60 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 40px 20px;
+    }
+
+    #cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .cover-ornament {
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 30px;
+    }
+
+    .cover-subtitle {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      letter-spacing: 5px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .cover-names {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(56px, 15vw, 96px);
+      color: #fff;
+      line-height: 1;
+      font-style: italic;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+
+    .cover-names span {
+      display: block;
+      font-size: clamp(28px, 7vw, 48px);
+      font-style: normal;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .cover-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-top: 30px;
+      letter-spacing: 2px;
+    }
+
+    .cover-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+      font-size: 15px;
+      margin-top: 16px;
+      max-width: 320px;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.4);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-hint::after {
+      content: '↓';
+      font-size: 18px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(249,243,238,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(109,73,63,0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 0;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 14px 16px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover { color: var(--gold); }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 70px 24px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 6vw, 42px);
+      text-align: center;
+      color: var(--dark);
+      margin-bottom: 40px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 40px;
+    }
+
+    /* ── COUPLE ── */
+    #coupleProfile {
+      background: #fff;
+    }
+
+    .couple-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .couple-card {
+      text-align: center;
+    }
+
+    .couple-img-wrap {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 16px;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 30px rgba(109,73,63,0.2);
+    }
+
+    .couple-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .couple-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .couple-parents {
+      font-size: 12px;
+      color: var(--brown-light);
+      line-height: 1.7;
+    }
+
+    .couple-sep {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      color: var(--gold);
+      margin-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── GALLERY ── */
+    #galleries {
+      background: var(--cream);
+    }
+
+    .gallery-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      text-align: center;
+      font-size: 16px;
+      color: var(--brown-light);
+      max-width: 500px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid a {
+      display: block;
+      overflow: hidden;
+      border-radius: 4px;
+      aspect-ratio: 1;
+    }
+
+    .gallery-grid a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-grid a:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ── COUNTDOWN ── */
+    #countdown {
+      background: linear-gradient(160deg, #3b1f17 0%, #6d493f 100%);
+      text-align: center;
+      color: #fff;
+    }
+
+    #countdown .section-title {
+      color: #fff;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .timer-box {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(201,169,110,0.4);
+      border-radius: 8px;
+      padding: 16px 20px;
+      min-width: 70px;
+    }
+
+    .timer-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+
+    .timer-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    .event-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 20px;
+    }
+
+    .btn-calendar {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .btn-calendar:hover {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    /* ── EVENTS ── */
+    #maps {
+      background: #fff;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+
+    @media(min-width: 540px) {
+      .events-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .event-card {
+      background: var(--cream);
+      border-radius: 8px;
+      padding: 24px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .event-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--dark);
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
+
+    .event-card p {
+      font-size: 13px;
+      color: var(--brown-light);
+      line-height: 1.7;
+    }
+
+    .event-card .event-time {
+      font-weight: 400;
+      color: var(--brown);
+      margin-top: 6px;
+    }
+
+    .map-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 500px;
+      margin: 0 auto 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      display: block;
+    }
+
+    .btn-maps {
+      display: block;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 12px;
+      background: var(--brown);
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .btn-maps:hover { background: var(--dark); }
+
+    /* ── WISHES ── */
+    #wishes {
+      background: var(--cream);
+    }
+
+    .wishes-list {
+      max-width: 560px;
+      margin: 0 auto 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .wish-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .wish-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--brown);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .wish-content strong {
+      font-size: 13px;
+      color: var(--dark);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .wish-content p {
+      font-size: 13px;
+      color: var(--brown-light);
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .wish-form {
+      max-width: 560px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+
+    .wish-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    .wish-form input,
+    .wish-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(109,73,63,0.2);
+      border-radius: 6px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--cream);
+      margin-bottom: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .wish-form input:focus,
+    .wish-form textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .wish-form textarea { resize: vertical; min-height: 80px; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 13px;
+      background: var(--brown);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover { background: var(--dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    footer img {
+      width: 40px;
+      margin-bottom: 14px;
+    }
+
+    footer p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 1px;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .couple-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .couple-img-wrap { width: 110px; height: 110px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER -->
+  <section id="cover">
+    <p class="cover-subtitle">The Wedding Of</p>
+    <div class="cover-ornament"></div>
+    <div class="cover-names">
+      Alin
+      <span>&amp;</span>
+      Aldi
+    </div>
+    <p class="cover-date">Senin, 30 November 2026</p>
+    <p class="cover-quote">"Love and hope are the two greatest inventions."</p>
+    <div class="scroll-hint">scroll</div>
+  </section>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="#coupleProfile">Couple</a></li>
+      <li><a href="#galleries">Galeri</a></li>
+      <li><a href="#countdown">Acara</a></li>
+      <li><a href="#maps">Lokasi</a></li>
+      <li><a href="#wishes">Ucapan</a></li>
+    </ul>
+  </nav>
+
+  <!-- COUPLE -->
+  <section id="coupleProfile">
+    <p class="section-label">Mempelai</p>
+    <h2 class="section-title">Dua Insan Bersatu</h2>
+    <div class="divider"></div>
+
+    <div class="couple-grid">
+      <div class="couple-card">
+        <div class="couple-img-wrap">
+          <img src="https://cdn-uploads.owlink.id/f238c360-f881-11ee-b17f-470510f0efd9.jpeg" alt="Alin" onerror="this.style.background='#c9a96e'" />
+        </div>
+        <h3 class="couple-name">Vicensia Oselina</h3>
+        <p class="couple-parents">
+          Putri pertama dari<br/>
+          Bapak Akbar S.Kom &amp;<br/>
+          Ibu Siti S.Pd
+        </p>
+      </div>
+      <div class="couple-card">
+        <div class="couple-img-wrap">
+          <img src="https://cdn-uploads.owlink.id/2c27d930-f882-11ee-b17f-470510f0efd9.jpeg" alt="Aldi" onerror="this.style.background='#c9a96e'" />
+        </div>
+        <h3 class="couple-name">Rivaldi Fatah</h3>
+        <p class="couple-parents">
+          Putra kedua dari<br/>
+          &nbsp;<br/>
+          Ibu Muaedah M.Pd
+        </p>
+      </div>
+    </div>
+
+    <div class="couple-sep">&amp;</div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="galleries">
+    <p class="section-label">Galeri</p>
+    <h2 class="section-title">Moment yang Berharga</h2>
+    <div class="divider"></div>
+    <p class="gallery-quote">"Menciptakan kenangan adalah hadiah yang tak ternilai harganya. Kenangan akan bertahan seumur hidup; benda-benda hanya dalam waktu singkat."</p>
+
+    <div class="gallery-grid">
+      <a href="https://cdn-uploads.owlink.id/4ece7b30-0852-11ef-8497-fd97e9d3efdf.jpg" target="_blank">
+        <img src="https://cdn-uploads.owlink.id/4ece7b30-0852-11ef-8497-fd97e9d3efdf.jpg" alt="Gallery 1" loading="lazy" />
+      </a>
+      <a href="https://cdn-uploads.owlink.id/4ef934b0-0852-11ef-8497-fd97e9d3efdf.jpg" target="_blank">
+        <img src="https://cdn-uploads.owlink.id/4ef934b0-0852-11ef-8497-fd97e9d3efdf.jpg" alt="Gallery 2" loading="lazy" />
+      </a>
+      <a href="https://cdn-uploads.owlink.id/4f14d300-0852-11ef-8497-fd97e9d3efdf.jpg" target="_blank">
+        <img src="https://cdn-uploads.owlink.id/4f14d300-0852-11ef-8497-fd97e9d3efdf.jpg" alt="Gallery 3" loading="lazy" />
+      </a>
+      <a href="https://cdn-uploads.owlink.id/4f2b8f50-0852-11ef-8497-fd97e9d3efdf.jpg" target="_blank">
+        <img src="https://cdn-uploads.owlink.id/4f2b8f50-0852-11ef-8497-fd97e9d3efdf.jpg" alt="Gallery 4" loading="lazy" />
+      </a>
+      <a href="https://cdn-uploads.owlink.id/4f4f1ce0-0852-11ef-8497-fd97e9d3efdf.jpg" target="_blank">
+        <img src="https://cdn-uploads.owlink.id/4f4f1ce0-0852-11ef-8497-fd97e9d3efdf.jpg" alt="Gallery 5" loading="lazy" />
+      </a>
+      <a href="https://cdn-uploads.owlink.id/4f53fee0-0852-11ef-8497-fd97e9d3efdf.jpg" target="_blank">
+        <img src="https://cdn-uploads.owlink.id/4f53fee0-0852-11ef-8497-fd97e9d3efdf.jpg" alt="Gallery 6" loading="lazy" />
+      </a>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section id="countdown">
+    <p class="section-label" style="color:rgba(255,255,255,0.5)">Hitung Mundur</p>
+    <h2 class="section-title">Acara Akan Diselenggarakan</h2>
+    <div class="divider" style="background:var(--gold)"></div>
+
+    <div class="countdown-timer">
+      <div class="timer-box">
+        <span class="timer-num" id="days">0</span>
+        <div class="timer-label">hari</div>
+      </div>
+      <div class="timer-box">
+        <span class="timer-num" id="hours">0</span>
+        <div class="timer-label">jam</div>
+      </div>
+      <div class="timer-box">
+        <span class="timer-num" id="minutes">0</span>
+        <div class="timer-label">menit</div>
+      </div>
+      <div class="timer-box">
+        <span class="timer-num" id="seconds">0</span>
+        <div class="timer-label">detik</div>
+      </div>
+    </div>
+
+    <p class="event-date">Senin, 30 November 2026</p>
+    <a class="btn-calendar"
+       href="https://www.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20Of%20Aldi%20-%20Alin&ctz=Asia/Jakarta&dates=20261130T080000/20261130T150000&details=The%20Wedding%20Of%20Aldi%20-%20Alin&location=Jalan%20Pondok%20Merah%20Kuning%20Blok%20M%20No%2022,%20Kaliabang%20tengah,%20Bekasi%20Utara"
+       target="_blank">
+      Simpan ke Kalender
+    </a>
+  </section>
+
+  <!-- LOCATION / EVENTS -->
+  <section id="maps">
+    <p class="section-label">Lokasi</p>
+    <h2 class="section-title">Detail Acara</h2>
+    <div class="divider"></div>
+
+    <div class="events-grid">
+      <div class="event-card">
+        <h3>Reception</h3>
+        <p>Jumat, 15 Oktober 2021</p>
+        <p class="event-time">pukul 10:30 – 15:00 WIB</p>
+      </div>
+      <div class="event-card">
+        <h3>Unduh Mantu</h3>
+        <p>Rabu, 21 April 2021</p>
+        <p class="event-time">pukul 10:00 WIB – selesai</p>
+        <p style="margin-top:6px">Bukit Tinggi Sekali, Wetan ngalor. 12980</p>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.955997537675!2d106.98272641455516!3d-6.269517495462146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698dc0c2ea3dbd%3A0x705bfac29d0981a7!2sOmah%20Kebon%20Bekasi!5e0!3m2!1sen!2sid!4v1602518182913!5m2!1sen!2sid"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Lokasi Pernikahan">
+      </iframe>
+    </div>
+
+    <p style="text-align:center;font-size:13px;color:var(--brown-light);margin:12px 0;">
+      Jalan Pondok Merah Kuning Blok M No 22, Kaliabang tengah, Bekasi Utara
+    </p>
+
+    <a class="btn-maps" href="https://goo.gl/maps/Q17wMRytE8PF1T5K9" target="_blank">
+      Lihat Lokasi di Google Maps
+    </a>
+  </section>
+
+  <!-- WISHES -->
+  <section id="wishes">
+    <p class="section-label">Ucapan</p>
+    <h2 class="section-title">Ucapan &amp; Doa</h2>
+    <div class="divider"></div>
+
+    <div class="wishes-list">
+      <div class="wish-item">
+        <div class="wish-avatar">AK</div>
+        <div class="wish-content">
+          <strong>Aloysius Kenneth</strong>
+          <p>"Selamat untuk acaranya"</p>
+        </div>
+      </div>
+      <div class="wish-item">
+        <div class="wish-avatar">IS</div>
+        <div class="wish-content">
+          <strong>Imannuel Stanley Gouw Sudijono</strong>
+          <p>"Selamat cik alin dan kak valdy semogga langgeng terus dan sehat selalu dan keluarga"</p>
+        </div>
+      </div>
+      <div class="wish-item">
+        <div class="wish-avatar">MO</div>
+        <div class="wish-content">
+          <strong>Mario Orlando</strong>
+          <p>"Selamat untuk Cik Rune-Rune dan Kak R7 semoga lancar dan diberkati selalu pernikahan nya"</p>
+        </div>
+      </div>
+      <div class="wish-item">
+        <div class="wish-avatar">DI</div>
+        <div class="wish-content">
+          <strong>Daniel Ivan Hartoyo</strong>
+          <p>"Selamat atas pernikahannya semoga sukses dan sehat selalu"</p>
+        </div>
+      </div>
+      <div class="wish-item">
+        <div class="wish-avatar">LI</div>
+        <div class="wish-content">
+          <strong>Lilya Irsianti Nugraha</strong>
+          <p>"Selamat utk Alin dan Aldi, semoga semua berjalan lancar sampai hari H, dan acara sukses."</p>
+        </div>
+      </div>
+      <div class="wish-item">
+        <div class="wish-avatar">IA</div>
+        <div class="wish-content">
+          <strong>Indah Angel</strong>
+          <p>"Selamat atas pernikahannya semoga langgeng sampai maut memisahkan.. aamiin"</p>
+        </div>
+      </div>
+      <div class="wish-item">
+        <div class="wish-avatar">SD</div>
+        <div class="wish-content">
+          <strong>Silvia dan Alan</strong>
+          <p>"Congrats alin and husband! Bahagia selalu dan cepet pny momongan! Amin 🫶🏼"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form (static / frontend only) -->
+    <div class="wish-form">
+      <h3>Kirim Ucapan</h3>
+      <input type="text" id="wish-name" placeholder="Nama kamu" />
+      <textarea id="wish-msg" placeholder="Ucapan &amp; doa untuk mempelai..."></textarea>
+      <button class="btn-submit" onclick="addWish()">Kirim Sekarang</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="https://our-wedding.link/_nuxt/img/owl-icon.2da6fa4.png" alt="Our Wedding Link" onerror="this.style.display='none'" />
+    <p>Made with ❤️ | <a href="https://our-wedding.link/" target="_blank">Our Wedding Link</a></p>
+  </footer>
+
+  <script>
+    // ── Countdown ──
+    function updateCountdown() {
+      const target = new Date('2026-11-30T08:00:00+07:00');
+      const now = new Date();
+      const diff = target - now;
+
+      if (diff <= 0) {
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '0';
+        document.getElementById('minutes').textContent = '0';
+        document.getElementById('seconds').textContent = '0';
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = String(d).padStart(2, '0');
+      document.getElementById('hours').textContent = String(h).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ── Add wish (frontend only) ──
+    function addWish() {
+      const name = document.getElementById('wish-name').value.trim();
+      const msg = document.getElementById('wish-msg').value.trim();
+      if (!name || !msg) return alert('Mohon isi nama dan ucapan ya 🙏');
+
+      const initials = name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+      const list = document.querySelector('.wishes-list');
+
+      const item = document.createElement('div');
+      item.className = 'wish-item';
+      item.style.animation = 'fadeIn 0.4s ease';
+      item.innerHTML = `
+        <div class="wish-avatar">${initials}</div>
+        <div class="wish-content">
+          <strong>${name}</strong>
+          <p>"${msg}"</p>
+        </div>
+      `;
+
+      list.prepend(item);
+      document.getElementById('wish-name').value = '';
+      document.getElementById('wish-msg').value = '';
+    }
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+</body>
+</html>
